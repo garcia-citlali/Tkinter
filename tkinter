@@ -2,27 +2,42 @@ import tkinter as tk
 def saludar(): 
     nombre = entrada_nombre.get() 
     edad= entrada_edad.get()
-    etiqueta_resultado.config(text=f"Hola {nombre},, tines {edad} años") 
+    semestre= entrada_semestre.get()
+    etiqueta_resultado.config(text=f"Hola {nombre}, tienes {edad} años y vas en {semestre} semestre en el CBTIS 03") 
 ventana = tk.Tk() 
-ventana.title("Mi primera App Grafica") 
-ventana.geometry("400x200") 
+ventana.title("Datos del CBTIS") 
+ventana.geometry("600x300") 
+ventana.config(bg="#ddbfec")
+etiqueta_autor = tk. Label(ventana, text="Autor: Citlali Garcia RIos")
+etiqueta_autor.config(bg="#ddbfec")
+etiqueta_autor.pack(pady=5)
 
 etiqueta_nombre = tk.Label(ventana, text="Ingresa tu nombre: ") 
-etiqueta_nombre.pack() 
+etiqueta_nombre.config(bg="#ddbfec")
+etiqueta_nombre.pack(pady=5) 
 
 entrada_nombre = tk.Entry(ventana) 
-entrada_nombre.pack()
+entrada_nombre.pack(pady=5)
 
 etiqueta_edad = tk.Label(ventana, text="Ingresa tu edad: ") 
-etiqueta_edad.pack() 
+etiqueta_edad.config(bg="#ddbfec")
+etiqueta_edad.pack(pady=5) 
 
 entrada_edad = tk.Entry(ventana) 
-entrada_edad.pack() 
+entrada_edad.pack(pady=5) 
 
-boton = tk.Button(ventana, text="Mostrar saludo", command=saludar) 
-boton.pack() 
+etiqueta_semestre = tk.Label(ventana, text="Ingresa en que semestre de prepa vas: ") 
+etiqueta_semestre.config(bg="#ddbfec")
+etiqueta_semestre.pack(pady=5) 
+
+entrada_semestre = tk.Entry(ventana) 
+entrada_semestre.pack(pady=5)
+
+boton = tk.Button(ventana, text="Mostrar datos", command=saludar) 
+boton.pack(pady=5) 
 
 etiqueta_resultado = tk.Label(ventana, text="") 
+etiqueta_resultado.config(bg="#ddbfec")
 etiqueta_resultado.pack() 
 
 ventana.mainloop()
